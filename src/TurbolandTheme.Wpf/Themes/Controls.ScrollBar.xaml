@@ -49,11 +49,25 @@
                         <Trigger Property="Command" Value="{x:Static ScrollBar.LineDownCommand}">
                             <Setter TargetName="arrow" Property="Text" Value="&#x25BC;"/>
                         </Trigger>
+                        <!-- Positioning note: the glyph's line box (16) is taller
+                             than the button's content area (14 after borders), so a
+                             Margin moves the clip window, not the ink. Nudge the
+                             drawn glyph with a RenderTransform instead. -->
                         <Trigger Property="Command" Value="{x:Static ScrollBar.LineLeftCommand}">
                             <Setter TargetName="arrow" Property="Text" Value="&#x25C4;"/>
+                            <Setter TargetName="arrow" Property="RenderTransform">
+                                <Setter.Value>
+                                    <TranslateTransform Y="1"/>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                         <Trigger Property="Command" Value="{x:Static ScrollBar.LineRightCommand}">
                             <Setter TargetName="arrow" Property="Text" Value="&#x25BA;"/>
+                            <Setter TargetName="arrow" Property="RenderTransform">
+                                <Setter.Value>
+                                    <TranslateTransform X="1" Y="1"/>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="face" Property="Background" Value="{DynamicResource Turboland.Brush.ControlSelected}"/>

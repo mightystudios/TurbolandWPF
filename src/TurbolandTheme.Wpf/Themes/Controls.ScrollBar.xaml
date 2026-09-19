@@ -4,7 +4,7 @@
     xmlns:ctl="clr-namespace:TurbolandTheme.Wpf.Controls">
 
     <!-- ============================================================
-         SCROLL BAR (classic, one-cell wide)
+         SCROLL BAR (classic, one row thick on either axis)
 
          The Borland Vision two-color model: the whole bar is painted
          from one pair, ScrollTrackBase and ScrollTrackStipple. The
@@ -187,8 +187,8 @@
              Height here would clamp a vertical scroll bar to one button,
              leaving only the up arrow rendered. The horizontal trigger
              swaps which axis is constrained.
-             The two axes use different tokens because the cell is 9x16:
-             a vertical bar is one cell wide (9), a horizontal bar one row tall (16). -->
+             The two axes keep separate tokens even though both are one row (16)
+             thick by default, so either can be retuned without a template edit. -->
         <Setter Property="Width" Value="{DynamicResource Turboland.Metric.ScrollBarWidth}"/>
         <Setter Property="MinWidth" Value="{DynamicResource Turboland.Metric.ScrollBarWidth}"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>

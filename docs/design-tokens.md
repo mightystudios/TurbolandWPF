@@ -161,7 +161,7 @@ shown are 1x.
 | `Turboland.Metric.StatusBarHeight` | 16 | One row |
 | `Turboland.Metric.TitleBarHeight` | 16 | One row |
 | `Turboland.Metric.DialogMinVisible` | 36 | 4 cells that must stay reachable |
-| `Turboland.Metric.ScrollBarWidth` | 9 | One cell |
+| `Turboland.Metric.ScrollBarWidth` | 16 | One row: a vertical bar is as wide as a horizontal bar is tall |
 | `Turboland.Metric.ScrollBarHeight` | 16 | One row |
 | `Turboland.Metric.ComboButtonWidth` | 18 | Two cells |
 | `Turboland.Metric.PopupMaxHeight` | 240 | 15 rows |

@@ -48,9 +48,12 @@
     <sys:Double x:Key="Turboland.Metric.DialogMinVisible">36</sys:Double>
 
     <!-- Component sizes, all whole cells.
-         ScrollBar needs a width AND a height because the cell is not square: a
-         vertical bar is one cell wide, a horizontal bar is one row tall. -->
-    <sys:Double x:Key="Turboland.Metric.ScrollBarWidth">9</sys:Double>
+         ScrollBar needs a width AND a height because the cell is not square. A bar
+         is one row thick on either axis: the vertical bar is as wide as the
+         horizontal bar is tall (16), because a one-cell-wide (9) vertical bar is
+         too narrow to read as Borland furniture. The tokens stay separate so the
+         two axes can diverge without touching the template. -->
+    <sys:Double x:Key="Turboland.Metric.ScrollBarWidth">16</sys:Double>
     <sys:Double x:Key="Turboland.Metric.ScrollBarHeight">16</sys:Double>
     <!-- Eight cells by one row. -->
     <sys:Double x:Key="Turboland.Metric.ButtonMinWidth">72</sys:Double>

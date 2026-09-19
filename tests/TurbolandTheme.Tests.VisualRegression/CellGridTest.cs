@@ -94,16 +94,16 @@ public class CellGridTest
     }
 
     [Fact]
-    public void ScrollBarTokens_DistinguishTheTwoAxes()
+    public void ScrollBarTokens_KeepTheTwoAxesSeparate()
     {
         StaThread.Run(() =>
         {
             Theme.Apply(_app, ThemeMode.Authentic, 1);
 
-            // A vertical bar is one cell wide; a horizontal bar is one row tall. A single
-            // "thickness" token cannot express both once the cell stops being square,
-            // which would leave one of the two axes wrong.
-            Assert.Equal(9.0, (double)_app.Resources["Turboland.Metric.ScrollBarWidth"]);
+            // Width and height are separate tokens even though a bar is one row
+            // thick on either axis by default: the cell is 9x16, so a single
+            // "thickness" token could not retune one axis without the other.
+            Assert.Equal(16.0, (double)_app.Resources["Turboland.Metric.ScrollBarWidth"]);
             Assert.Equal(16.0, (double)_app.Resources["Turboland.Metric.ScrollBarHeight"]);
 
             Assert.Equal(16.0, ((GridLength)_app.Resources["Turboland.Grid.ScrollBarButtonHeight"]).Value);

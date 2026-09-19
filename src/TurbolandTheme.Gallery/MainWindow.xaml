@@ -130,16 +130,65 @@
                                  recolor its bars: the classic blue + cyan pair of the
                                  debugger and editor windows. Scoped to this panel to show
                                  the mechanism; the same keys at application scope would
-                                 restyle every bar in the app. -->
+                                 restyle every bar in the app.
+                                 The panel holds a small editor window: lorem ipsum on the
+                                 blue editor face, scrolled by a vertical and a horizontal
+                                 bar drawn from the overridden pair. -->
                             <StackPanel Margin="{DynamicResource Turboland.Size.SectionMargin}">
                                 <StackPanel.Resources>
                                     <SolidColorBrush x:Key="Turboland.Brush.ScrollTrackBase"
                                                      Color="{DynamicResource Turboland.Color.Palette.1}"/>
                                     <SolidColorBrush x:Key="Turboland.Brush.ScrollTrackStipple"
                                                      Color="{DynamicResource Turboland.Color.Palette.3}"/>
+                                    <!-- The stock ScrollViewer template fills the square
+                                         between two visible bars with a system-gray corner
+                                         rectangle, which is off-theme. This is the stock
+                                         layout minus that corner; the bars are found by
+                                         their PART_ names, so the ScrollViewer drives them
+                                         as usual and scrolling stays fully functional. -->
+                                    <ControlTemplate x:Key="GalleryTextScroller" TargetType="ScrollViewer">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <ScrollContentPresenter Grid.Row="0" Grid.Column="0"
+                                                                    Margin="{TemplateBinding Padding}"/>
+                                            <ScrollBar x:Name="PART_VerticalScrollBar"
+                                                       Grid.Row="0" Grid.Column="1"
+                                                       Orientation="Vertical"
+                                                       Minimum="0"
+                                                       Maximum="{TemplateBinding ScrollableHeight}"
+                                                       ViewportSize="{TemplateBinding ViewportHeight}"
+                                                       Value="{Binding VerticalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                                            <ScrollBar x:Name="PART_HorizontalScrollBar"
+                                                       Grid.Row="1" Grid.Column="0"
+                                                       Orientation="Horizontal"
+                                                       Minimum="0"
+                                                       Maximum="{TemplateBinding ScrollableWidth}"
+                                                       ViewportSize="{TemplateBinding ViewportWidth}"
+                                                       Value="{Binding HorizontalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                                        </Grid>
+                                    </ControlTemplate>
                                 </StackPanel.Resources>
-                                <ScrollBar Orientation="Horizontal" ctl:CellSize.Rows="1"
-                                           Minimum="0" Maximum="100" Value="35" ViewportSize="25"/>
+                                <Border Background="{DynamicResource Turboland.Brush.EditorBackground}"
+                                        BorderBrush="{DynamicResource Turboland.Brush.ControlShadow}"
+                                        BorderThickness="{DynamicResource Turboland.Size.Border}"
+                                        ctl:CellSize.Rows="9">
+                                    <ScrollViewer Template="{StaticResource GalleryTextScroller}"
+                                                  VerticalScrollBarVisibility="Visible"
+                                                  HorizontalScrollBarVisibility="Visible">
+                                        <TextBlock Foreground="{DynamicResource Turboland.Brush.EditorForeground}"
+                                                   TextWrapping="NoWrap"
+                                                   Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&#x0a;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&#x0a;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&#x0a;Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&#x0a;&#x0a;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.&#x0a;Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&#x0a;Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.&#x0a;&#x0a;Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.&#x0a;Ut labore et dolore magnam aliquam quaerat voluptatem, exit enim ad minima veniam, quis nostrum exercitationem.&#x0a;Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.&#x0a;Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur."/>
+                                    </ScrollViewer>
+                                </Border>
                             </StackPanel>
 
                             <TextBlock Text="Tab control"/>

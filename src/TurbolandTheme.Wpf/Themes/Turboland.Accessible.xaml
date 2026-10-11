@@ -35,6 +35,7 @@
         <ResourceDictionary Source="Controls.StatusBar.xaml"/>
         <ResourceDictionary Source="Controls.TabControl.xaml"/>
         <ResourceDictionary Source="Controls.GroupBox.xaml"/>
+        <ResourceDictionary Source="Controls.ToolTip.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

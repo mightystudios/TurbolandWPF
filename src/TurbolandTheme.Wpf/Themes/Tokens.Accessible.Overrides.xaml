@@ -109,6 +109,10 @@
          part of the same change: the signal moves from hue to chrome. -->
     <SolidColorBrush x:Key="Turboland.Brush.FieldFocusedForeground" Color="{DynamicResource Turboland.Color.Palette.0}" />
 
+    <!-- White on cyan is the authentic tooltip pair but measures only 2.86:1.
+         Accessible mode keeps the cyan face and uses black at 7.33:1. -->
+    <SolidColorBrush x:Key="Turboland.Brush.ToolTipForeground" Color="{DynamicResource Turboland.Color.Palette.0}" />
+
     <!-- ============ DISABLED ============
          Dark gray on light gray is 3.21:1. Blue is 5.72:1, keeps a clear
          "not enabled" signal, and cannot be confused with the black used

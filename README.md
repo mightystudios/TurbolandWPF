@@ -13,8 +13,8 @@ The theme re-templates stock WPF controls. It does not replace them.
 ## Features
 
 - **Complete control coverage** - Button, CheckBox, RadioButton, TextBox, PasswordBox,
-  Menu, ListBox, ComboBox, TreeView, TabControl, GroupBox, ScrollBar, StatusBar and
-  Window are all themed by implicit styles.
+  Menu, ListBox, ComboBox, TreeView, TabControl, GroupBox, ScrollBar, StatusBar, ToolTip
+  and Window are all themed by implicit styles.
 - **Two modes** - `Authentic` reproduces the original palette exactly. `Accessible`
   keeps the same 16 colors but re-maps them so every rendered text pair meets
   WCAG AA, and no cue is carried by color alone.

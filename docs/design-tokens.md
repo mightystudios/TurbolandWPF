@@ -58,7 +58,12 @@ Accessible mode re-maps, so an application built on them adapts for free.
 | `Turboland.Brush.ControlShadow` | Black |
 | `Turboland.Brush.ControlSelected` | Green |
 | `Turboland.Brush.ControlSelectedForeground` | White |
+| `Turboland.Brush.ToolTipBackground` | Cyan |
+| `Turboland.Brush.ToolTipForeground` | White |
 | `Turboland.Brush.Shadow` | Black |
+
+Accessible mode keeps the tooltip background cyan and remaps
+`Turboland.Brush.ToolTipForeground` to black for WCAG AA contrast.
 
 ### Window frame
 

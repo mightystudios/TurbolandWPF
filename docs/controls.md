@@ -28,10 +28,21 @@ as the base of your own, key it off the type:
 | `GroupBox` | Header straddles the frame line |
 | `ScrollBar`, `Thumb`, `RepeatButton` | One row thick on either axis; two-color track dither, recolorable via `ScrollTrackBase` / `ScrollTrackStipple` |
 | `StatusBar`, `StatusBarItem` | A `Separator` child renders as the CP437 vertical bar |
+| `ToolTip` | White IBM VGA text on cyan in Authentic mode; black text on cyan in Accessible mode |
 | `Window` | Blue desktop or light-gray dialog face - see `ApplyTo` |
 
 Access keys still work the standard way: `Content="_OK"` declares `Alt+O` and renders the
 `O` in the accelerator color.
+
+Use standard WPF tooltip markup. String tooltips and explicit `ToolTip` content both pick
+up the implicit style:
+
+```xml
+<Button Content="Compile" ToolTip="Compile the current project"/>
+```
+
+Override `Background`, `Foreground`, `BorderBrush`, `BorderThickness` or `Padding` on an
+explicit `ToolTip` when an individual popup needs different presentation.
 
 Every one of these controls renders both its enabled and its disabled depiction from the
 same templates: set `IsEnabled="False"` (on the control or, for item controls, on an

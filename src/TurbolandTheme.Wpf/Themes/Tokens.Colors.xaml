@@ -74,6 +74,11 @@
          0xB3 glyph occupying a whole character cell rather than a rule between cells. -->
     <SolidColorBrush x:Key="Turboland.Brush.StatusBarSeparator" Color="{DynamicResource Turboland.Color.Palette.0}" />
 
+    <!-- Tooltips: reverse video on cyan, matching the compact help popups used by
+         DOS-era IDEs while remaining independently overridable by applications. -->
+    <SolidColorBrush x:Key="Turboland.Brush.ToolTipBackground" Color="{DynamicResource Turboland.Color.Palette.3}" />
+    <SolidColorBrush x:Key="Turboland.Brush.ToolTipForeground" Color="{DynamicResource Turboland.Color.Palette.15}" />
+
     <!-- Input fields and option panels (list boxes, radio/check groups) -->
     <SolidColorBrush x:Key="Turboland.Brush.FieldBackground" Color="{DynamicResource Turboland.Color.Palette.3}" />
     <SolidColorBrush x:Key="Turboland.Brush.FieldForeground" Color="{DynamicResource Turboland.Color.Palette.0}" />

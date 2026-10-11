@@ -80,7 +80,10 @@
                                  row (SectionMargin), never a few pixels. -->
                             <TextBlock Text="Buttons"/>
                             <StackPanel Orientation="Horizontal" Margin="{DynamicResource Turboland.Size.SectionMargin}">
-                                <Button Content="OK" IsDefault="True" Margin="{DynamicResource Turboland.Size.ButtonStripMargin}"/>
+                                <Button Content="OK"
+                                        ToolTip="Accept the current settings"
+                                        IsDefault="True"
+                                        Margin="{DynamicResource Turboland.Size.ButtonStripMargin}"/>
                                 <Button Content="Cancel" IsCancel="True" Margin="{DynamicResource Turboland.Size.ButtonStripMargin}"/>
                                 <Button Content="Disabled" IsEnabled="False"/>
                             </StackPanel>

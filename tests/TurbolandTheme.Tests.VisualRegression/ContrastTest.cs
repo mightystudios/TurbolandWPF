@@ -75,6 +75,7 @@ public class ContrastTest
         // AcceleratorText, so the inherit flag does not reach it. Scoring it as though
         // it did would credit Accessible mode with a fix it never renders.
         new("status bar accelerator",    "Turboland.Brush.StatusBarAccelerator",     "Turboland.Brush.StatusBarBackground"),
+        new("tooltip text",              "Turboland.Brush.ToolTipForeground",        "Turboland.Brush.ToolTipBackground"),
         new("field text",                "Turboland.Brush.FieldForeground",          "Turboland.Brush.FieldBackground"),
         new("field text, focused",       "Turboland.Brush.FieldFocusedForeground",   "Turboland.Brush.FieldBackground"),
         new("field text, selected",      "Turboland.Brush.FieldSelectionForeground", "Turboland.Brush.FieldSelectionBackground"),
@@ -105,6 +106,7 @@ public class ContrastTest
         "menu accelerator",             // red on light gray      3.34
         "menu accelerator, selected",   // red on green           2.49
         "status bar accelerator",       // red on light gray      3.34
+        "tooltip text",                 // white on cyan          2.86
         "field text, focused",          // white on cyan          2.86
         "field text, selected",         // white on green         3.11
         "field accelerator",            // yellow on cyan         2.69

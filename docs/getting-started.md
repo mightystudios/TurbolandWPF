@@ -3,8 +3,8 @@
 ## Requirements
 
 - Windows
-- .NET 9 SDK
-- A WPF project (`net9.0-windows` with `<UseWPF>true</UseWPF>`)
+- .NET 10 SDK
+- A WPF project (`net10.0-windows` with `<UseWPF>true</UseWPF>`)
 
 ## 1. Reference the theme
 

@@ -82,7 +82,7 @@ tests/
 
 ## Building
 
-Requires the .NET 9 SDK and Windows.
+Requires the .NET 10 SDK and Windows.
 
 ```powershell
 dotnet build

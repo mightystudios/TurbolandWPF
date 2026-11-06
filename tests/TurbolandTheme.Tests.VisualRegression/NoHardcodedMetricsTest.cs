@@ -115,7 +115,7 @@ public class NoHardcodedMetricsTest
 
     /// <summary>
     /// Locates src\TurbolandTheme.Wpf\Themes by walking up from the test binary,
-    /// so the test works from bin\Debug\net9.0-windows without copying the XAML.
+    /// so the test works from bin\Debug\net10.0-windows without copying the XAML.
     /// </summary>
     private static IEnumerable<string> ThemeFiles()
     {
